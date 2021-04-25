@@ -9,7 +9,7 @@ VERSION := 0.0.0
 COMMIT := $(shell git describe --always --long --dirty)
 PKG_LIST := $(shell go list ${PKG}/... | grep -v /vendor/)
 GO_FILES := $(shell find . -name '*.go' | grep -v /vendor/)
-CMDS := describe_clusters listS3Contents
+CMDS := listClusterArns listS3Contents
 
 help: ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'

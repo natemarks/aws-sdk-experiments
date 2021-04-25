@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	"reflect"
 	"testing"
 )
 
@@ -35,8 +34,8 @@ func TestGetObjects(t *testing.T) {
 				t.Errorf("GetObjects() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("GetObjects() got = %v, want %v", got, tt.want)
+			if got == nil || len(got.Contents) == 0 {
+				t.Errorf("Got an empty list")
 			}
 		})
 	}
