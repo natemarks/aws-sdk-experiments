@@ -11,5 +11,5 @@ To create a new executable, create a new directory in cmd/  and add a main.go. Y
 
 You also need to add the new diretory to the makefile:
 ```makefile
-CMDS := describe_clusters listS3Contents
+CMDS := listClusterArns listS3Contents
 ```
